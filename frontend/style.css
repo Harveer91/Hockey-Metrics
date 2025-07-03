@@ -6,11 +6,14 @@ body {
 }
 .header-info {
     font-family: "Michroma", sans-serif;
-    font-weight: 600px;
-    font-style: normal;
+    font-weight: 400px;
+    font-style: bold;
     text-align: center;
     margin-bottom: 20px;
 
+}
+#title{
+    font-size: 50px;
 }
 .box {
     width: 320px;
@@ -27,4 +30,59 @@ body {
     margin-right: 50px;
     margin-left: 55px;
 
+}
+
+#nhl-logo{
+    display:inline-block;
+    max-width: 175px;
+    height: auto;
+    margin: auto;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+
+.team-logos{
+    display:inline-block;
+    max-width: 180px;
+    height: auto;
+    margin: auto;
+}
+#sanjose-logo{
+    max-width:135px;
+    height:auto;
+    margin:auto;
+    margin-left:18px;
+    margin-right:18px;
+    }
+#la-kings-logo{
+    max-width: 150px;
+    margin-left:-10px;
+}
+
+#vgk-logo{
+    max-width:83px;
+    margin-left:20px;
+}
+
+#leafs-logo{
+    max-width: 135px;
+    margin-left:-25px;
+}
+
+#montreal-logo{
+    max-width: 115px;
+    padding-bottom: 23px;
+    margin-left:20px;
+}
+
+#bruins-logo{
+    max-width:110px;
+    padding-bottom: 12px;
+    margin-left: 25px;
+}
+
+#redwings-logo{
+    max-width:135px;
+    padding-bottom:20px;
+    margin-left: 25px;
 }
