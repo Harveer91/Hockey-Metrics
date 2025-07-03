@@ -1,0 +1,30 @@
+body {
+    background-color: #012951 ;
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+}
+.header-info {
+    font-family: "Michroma", sans-serif;
+    font-weight: 600px;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+.box {
+    width: 320px;
+    height:450px;
+    border: 5px solid hsl(232, 98%, 16%);
+    background-color: hsl(217, 74%, 50%);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px;
+    position: static;
+    display: inline-block;
+    text-align: center;
+    margin-top: 100px;
+    margin-right: 50px;
+    margin-left: 55px;
+
+}
