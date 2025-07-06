@@ -22,7 +22,52 @@ body {
     top:45px;
     right:50px;
 }
+.nav-bar{
+    position:fixed;
+    z-index:1;
+    top:0;
+    left:0;
+    height:100%;
+    width:0;
+}
+.nav-bar ul{
+    /*visibility: hidden;*/
+    font-family: "Michroma", sans-serif;
+    list-style-type: none;
+    background-color: hsl(239, 100%, 12%);
+    padding: 0px;
+    margin: 0px;
+    padding-top: 100px;
+}
 
+.nav-bar a{
+    visibility: hidden;
+    color:white;
+    text-decoration: none;
+    padding:30px 30px 15px 32px;
+    display: block;
+    text-align: center;
+}
+
+.dropdown-menu{
+    position:absolute;
+    top:60px;
+    left:20px;
+    border-radius: 10px;
+    background:none;
+    border:none;
+    padding:0;
+    transition: transform 0.2s ease;
+}
+
+#menu-icon{
+    width: 30px;
+    height: auto;
+}
+
+.dropdown-menu:hover{
+  transform:scale(1.1);
+}
 
 .box {
     width: 320px;
