@@ -16,11 +16,19 @@ body {
     font-size: 50px;
 }
 
+#logo{
+    position:absolute;
+    max-width: 60px;
+    top:45px;
+    right:50px;
+}
+
+
 .box {
     width: 320px;
     height:450px;
-    border: 1px solid hsl(0, 2%, 68%);
-    background-color: hsl(217, 90%, 29%);
+    border: 2px solid hsl(0, 2%, 68%);
+    background-color: hsl(207, 95%, 32%);
     border-radius: 10px;
     padding: 20px;
     box-shadow: 2px;
@@ -41,11 +49,26 @@ body {
    background-position: center;
    background-size: 100%;
 }
+
+#rookie-projections-box{
+    background-image: url("player-images/schaefer.png");
+    background-repeat: no-repeat; 
+    background-position: bottom;
+    background-size: 100%;
+}
+
+#hockey-gems-box{
+    background-image: url("player-images/ovechkin-cup.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 140%;
+}
 .box:hover{
     width: 330px;
     height:453px;
     box-shadow: 0 0 10px 5px hsl(191, 99%, 60%);
     text-shadow: 0 0 10px  hsl(0, 1%, 62%);
+    background-color: hsl(220, 100%, 22%);
 }
 
 #nhl-logo{
