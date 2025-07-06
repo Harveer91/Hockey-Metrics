@@ -208,6 +208,64 @@ body {
     padding-bottom: 20px;
 }
 
+.team-logos4{
+    /*display:inline-block;*/
+    max-width: 180px;
+    height: auto;
+    margin: auto;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+}
+
+#blackhawks-logo{
+    max-width:220px;
+    margin-left:5px;
+    padding-bottom: 15px;
+}
+
+#wild-logo{
+    max-width:140px;
+    margin-left:-35px;
+    padding-bottom: 55px;
+}
+
+#predators-logo{
+    max-width:150px;
+    margin-left:10px;
+    padding-bottom: 55px;
+}
+
+#blues-logo{
+    max-width:125px;
+    padding-bottom:45px;
+    margin-left:10px;
+}
+
+#blue-jackets-logo{
+    max-width:120px;
+    margin-left:-50px;
+    padding-bottom: 45px;
+}
+
+#hurricanes-logo{
+    max-width: 150px;;
+    padding-bottom:30px;
+    margin-left:10px;
+}
+
+#flyers-logo{
+    max-width:130px;
+    padding-bottom:60px;
+    margin-left: 30px;
+}
+
+#devils-logo{
+    max-width: 100px;
+    padding-bottom: 50px;
+    margin-left: 20px;
+}
+
+
 
 
 
