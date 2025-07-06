@@ -18,3 +18,5 @@ function fade_logos(class_name){
     fade_in();
 }
 fade_logos('team-logos1')
+setTimeout(() => { fade_logos('team-logos2'); }, 3000);
+setTimeout(() => { fade_logos('team-logos3'); }, 6000);

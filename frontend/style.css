@@ -40,15 +40,25 @@ body {
     margin-left: 18px;
     margin-right: 18px;
 }
-
-.team-logos1{
+#nhl-logo2{
     display:inline-block;
+    visibility: hidden;
+    max-width: 175px;
+    height: auto;
+    margin: auto;
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.logo-group{
+    position:absolute;
+}
+.team-logos1{
+    /*display:inline-block;*/
     max-width: 180px;
     height: auto;
     margin: auto;
     transition: opacity 1.5s ease-in-out;
     opacity: 1;
-
 }
 #sanjose-logo{
     max-width:135px;
@@ -56,6 +66,8 @@ body {
     margin:auto;
     margin-left:18px;
     margin-right:18px;
+    top:0;
+
     }
 #la-kings-logo{
     max-width: 150px;
@@ -68,8 +80,9 @@ body {
 }
 
 #leafs-logo{
-    max-width: 135px;
+    max-width: 130px;
     margin-left:-25px;
+    padding-top: 10px;
 }
 
 #montreal-logo{
@@ -89,3 +102,112 @@ body {
     padding-bottom:20px;
     margin-left: 25px;
 }
+.team-logos2{
+    position: rel;
+    /*display:inline-block;*/
+    max-width: 180px;
+    height: auto;
+    margin: auto;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+}
+
+#flames-logo{
+    max-width:195px;
+}
+
+#oilers-logo {
+    max-width:120px;
+    padding-bottom:10px;
+}
+
+#canucks-logo {
+    max-width:120px;
+    margin-left: 25px;
+    padding-bottom: 10px;
+}
+
+#kraken-logo {
+    max-width:120px;
+    padding-bottom: 10px;
+    margin-left:30px;
+}
+
+#senators-logo{
+    max-width:135px;
+    padding-bottom:15px;
+    margin-left:-50px;
+}
+
+#sabres-logo{
+    max-width:110px;
+    padding-bottom:15px;
+    margin-left:30px;
+}
+
+/*#lightning-logo{}*/
+
+#panthers-logo{
+    max-width:120px;
+    padding-bottom:15px;
+}
+
+.team-logos3{
+    /*display:inline-block;*/
+    max-width: 180px;
+    height: auto;
+    margin: auto;
+    transition: opacity 1.5s ease-in-out;
+    opacity: 0;
+}
+
+#avalanche-logo{
+    max-width: 140px;
+    margin-left:30px;
+    padding-top:10px;
+}
+
+#stars-logo{
+    max-width: 140px;
+    margin-left:30px;
+    padding-top:10px;
+}
+
+#jets-logo{
+    max-width: 110px;
+    margin-left:20px;
+    padding-bottom: 15px;
+    
+}
+
+#mammoth-logo{
+    max-width: 150px;
+    margin-left:10px;
+    padding-bottom: 10px;
+}
+
+#penguins-logo{
+    margin-left:-95px;
+}
+
+#capitals-logo{
+    max-width:150px;
+    padding-bottom: 20px;
+    margin-left:-10px;
+}
+
+#rangers-logo{
+    max-width:110px;
+    padding-bottom: 20px;
+    margin-left:20px;
+}
+
+#islanders-logo{
+    max-width:120px;
+    margin-left:25px;
+    padding-bottom: 20px;
+}
+
+
+
+
