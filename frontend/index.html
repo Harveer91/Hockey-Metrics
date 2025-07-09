@@ -3,26 +3,26 @@
 <head>
     <link rel="stylesheet" href="style.css" />
     <script src="logo.js"></script>
+    <script src="index.js"></script>
     <link rel="icon" type=png href="favicon.png">
 
  
     <h1 class="header-info" id="title"><b>Hockey Metrics</b></h1>
-    <!--These are all the team logos on the home page-->
 </head>
 <body>
     <nav class="nav-bar">
+        <button class="dropdown-menu" onclick="toggleMenu()">
+            <img id="menu-icon" src="menu-icon.png">
+        </button>
         <ul>
-            <button class="dropdown-menu">
-                <img id="menu-icon" src="menu-icon.png">
-            </button>
-            <li><a href="">Home</a></li>
-            <li><a href="">Teams</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="teams.html">Teams</a></li>
             <li><a href="">Risers & Fallers</a></li>
             <li><a href="">Rookie Projections</a></li>
 
         </ul>
     </nav>
-
+    <!--favicon/logo-->
     <img id="logo" src="favicon.png">  
 
     <div class="logo-group">
@@ -87,15 +87,15 @@
     <main>
         <hr class="line-divider">
         <div class="boxes">
-            <div class="box" id="teams-box">
+            <a href="teams.html"class="box" id="teams-box">
                 Teams
-            </div>
-            <div class="box" id="hockey-gems-box">
-                Hockey Gems & Busts 
-            </div>
-            <div class="box" id="rookie-projections-box">
+            </a>
+            <a href="" class="box" id="hockey-gems-box">
+                Hockey Gems & Busts
+            </a>
+            <a href="" class="box" id="rookie-projections-box">
                 Rookie Projections 
-            </div>
+            </a>
         </div>
     </main>
 </body>
