@@ -15,6 +15,7 @@ function getSkaterStatsForSingleTeam(teamAbbr) {
       console.log(data);
       displaySkaterStats(data);
       updateTeamLogo(teamAbbr);
+      update_team_name(teamAbbr);
     })
     .catch(err => {
       console.error(err);
@@ -94,7 +95,7 @@ function updateTeamLogo(teamAbbr) {
     FLA: 'nhl-images/florida-panthers-logo.png',
     LAK: 'nhl-images/Los_Angeles_Kings_2024_Logo.svg.png',
     MIN: 'nhl-images/Minnesota_Wild.svg.png',
-    MON: 'nhl-images/Montreal_Canadiens.svg.png',
+    MTL: 'nhl-images/Montreal_Canadiens.svg.png',
     NSH: 'nhl-images/Nashville_Predators_Logo_(2011).svg.png',
     NJD: 'nhl-images/New_Jersey_Devils_logo.svg.png',
     NYI: 'nhl-images/Logo_New_York_Islanders.svg.png',
@@ -121,6 +122,51 @@ function updateTeamLogo(teamAbbr) {
     logoElem.alt = `${teamAbbr} Logo`;
   }
 }
+
+function update_team_name(teamAbbr){
+    const logo_name = {
+        ANA: 'Anaheim Ducks',
+        BOS: 'Boston Bruins',
+        BUF: 'Buffalo Sabres',
+        CGY: 'Calgary Flames',
+        CAR: 'Carolina Hurricanes',
+        CHI: 'Chicago Blackhawks',
+        COL: 'Colorado Avalanche',
+        CBJ: 'Columbus Blue Jackets',
+        DAL: 'Dallas Stars',
+        DET: 'Detriot Red Wings',
+        EDM: 'Edmonton Oilers',
+        FLA: 'Florida Panthers',
+        LAK: 'Los Angeles Kings',
+        MIN: 'Minnesota Wild',
+        MTL: 'Montreal Canadiens',
+        NSH: 'Nashville Predators',
+        NJD: 'New Jersey Devils',
+        NYI: 'New York Islanders',
+        NYR: 'New York Rangers',
+        OTT: 'Ottawa Senators',
+        PHI: 'Philadelphia Flyers',
+        PIT: 'Pittsburgh Penguins',
+        SJS: 'San Jose Sharks',
+        SEA: 'Seattle Kraken',
+        STL: 'St.Louis Blues',
+        TBL: 'Tampa Bay Lightning',
+        TOR: 'Toronto Maple Leafs',
+        UTA: 'Utah Mammoth',
+        VAN: 'Vanocuver Canucks',
+        VGK: 'Vegas Golden Knights',
+        WSH: 'Washington Capitals',
+        WPG: 'Winnepeg Jets',    
+    };
+
+   const nameElem = document.getElementById('team-name');
+
+  if (logo_name[teamAbbr]) {
+    nameElem.innerHTML = logo_name[teamAbbr];
+  } else {
+    nameElem.innerHTML = 'Team Not Found';
+  }
+};
 
 const toggleDropdown = () => {
   const dropdown = document.querySelector('.team-options');

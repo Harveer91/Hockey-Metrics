@@ -490,6 +490,20 @@ body {
     object-fit: contain;
 }
 
+#team-name{
+    position: absolute;
+    display: inline-block;
+    top:117px;
+    left:600px;
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: "Michroma", sans-serif;
+    font-size: 30px;
+    text-shadow: 0 0 10px hsl(0, 59%, 40%);
+
+}
+
 
 
 
