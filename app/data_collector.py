@@ -1,6 +1,6 @@
 import requests #allows you to send HTTP requests (like GET) to external APIs
 
-Live_info_url = "https://api-web.nhle.com/v1/" #this is the base url all endpoints are connected to  
+Live_info_url = "https://api-web.nhle.com" #this is the base url all endpoints are connected to  
 
 #gets full roster of selected NHL team 
 def get_team_roster(team_id: int):
@@ -24,16 +24,18 @@ def get_team_stats(TEAM_ABBR: str, season_id: str):
     return("error: Failed to get team stats")
 
 def get_skater_stats_for_single_team(TEAM_ABBR: str):
-    team_skaters = []
-    response = requests.get("https://api.nhle.com/stats/rest/en/skater")
+    print(f"Fetching skater stats for team: {TEAM_ABBR}")
+    response = requests.get(f"https://api-web.nhle.com/v1/club-stats/{TEAM_ABBR}/now")
+    print(f"Response status: {response.status_code}")
     if response.status_code == 200:
-        teams = response.json().get('data', [])
-        for selected_team_player in teams:
-            if selected_team_player.get("TEAM_ABBR","").lower() == TEAM_ABBR.lower():
-                team_skaters.append(selected_team_player)
+        data = response.json()
+        print("Response JSON preview:", list(data.keys())) 
+        team_skaters = data.get('skaters', [])
+        print(f"Found {len(team_skaters)} skaters")
         return team_skaters
     else:
-        return("Error: Failed to recieve roster data")
+        print("Failed to receive roster data")
+        return "Error: Failed to receive roster data"
 
     #gets the stats for players on one team 
 

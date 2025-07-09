@@ -399,6 +399,56 @@ body {
     margin-bottom:-60px;
 }
 
+/*This is all main teams webpage code*/
+
+.dropdown-T{
+    position: relative;
+    display: block;
+    font-family: "Michroma", sans-serif;
+}
+
+.team-dropdown{
+    background-color: hsl(0, 100%, 100%);
+    border:10px;
+    border-radius: 8px;
+    width:300px;
+    height:50px;
+    margin-left: 70px;
+    font-family:"Michroma", sans-serif;
+    font-style: bold;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.team-options {
+  display: none; 
+  position: absolute;
+  background-color: hsl(0, 0%, 81%);
+  min-width: 200px;
+  max-height: 300px; 
+  overflow-y: auto;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  z-index: 1;
+  margin-left: 70px;
+}
+
+.team-options.show{
+    display: block;
+}
+
+.team-options a{
+    color:black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.team-options a:hover{
+    background-color:hsl(0, 0%, 33%)
+}
 
 
 

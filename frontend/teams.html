@@ -28,10 +28,45 @@
     <main>
 
         <!--Dropdown team selector-->
-        <button>
-            <div>
-                <a href="#" ></a>
+        <div class="dropdown-T">
+            <button class="team-dropdown" onclick="toggleDropdown()">Select a Team</button>
+            <div class="team-options">
+                <a href="#" onclick="getSkaterStatsForSingleTeam('ANA'); return false;">Anaheim Ducks</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('BOS'); return false;">Boston Bruins</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('BUF'); return false;">Buffalo Sabres</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('CGY'); return false;">Calgary Flames</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('CAR'); return false;">Carolina Hurricanes</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('CHI'); return false;">Chicago Blackhawks</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('COL'); return false;">Colorado Avalanche</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('CBJ'); return false;">Columbus Blue Jackets</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('DAL'); return false;">Dallas Stars</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('DET'); return false;">Detroit Red Wings</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('EDM'); return false;">Edmonton Oilers</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('FLA'); return false;">Florida Panthers</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('LAK'); return false;">Los Angeles Kings</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('MIN'); return false;">Minnesota Wild</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('MON'); return false;">Montreal_Canadiens</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('NSH'); return false;">Nashville Predators</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('NJD'); return false;">New Jersey Devils</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('NYI'); return false;">New York Islanders</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('NYR'); return false;">New York Rangers</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('OTT'); return false;">Ottawa Senators</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('PHI'); return false;">Philadelphia Flyers</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('PIT'); return false;">Pittsburgh Penguins</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('SJS'); return false;">San Jose Sharks</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('SEA'); return false;">Seattle Kraken</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('STL'); return false;">St. Louis Blues</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('TBL'); return false;">Tampa Bay Lightning</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('TOR'); return false;">Toronto Maple Leafs</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('UTA'); return false;">Utah Mammoth</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('VAN'); return false;">Vancouver Canucks</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('VGK'); return false;">Vegas Golden Knights</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('WSH'); return false;">Washington Capitals</a>
+                <a href="#" onclick="getSkaterStatsForSingleTeam('WPG'); return false;">Winnepeg Jets</a>
             </div>
-        </button>
+        </div>
+
+        <!--This is temp check-->
+        <div id="team-info"></div>
     </main>
 </body>
