@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="logo.js"></script>
+    <script src="index.js" defer></script>
+    <link rel="icon" type=png href="favicon.png">
+</head>
+<body>
+    <h1 class="header-info" id="title-teams"><b>Top 25</b></h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+
+    <img id="logo" src="favicon.png">  
+    <nav class="nav-bar">
+        <button class="dropdown-menu" onclick="toggleMenu()">
+            <img id="menu-icon" src="menu-icon.png">
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="top_25.html">Top 25</a></li>
+            <li><a href="">Rookie Projections</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div id="top_25_data"></div>
+        <button class='toggles_top25' id="goals" onclick="toggle_goal()">Goals</button>
+        <button class='toggles_top25' id="assists" onclick='toggle_assist()'>Assists</button>
+        <button class='toggles_top25' id="points" onclick="toggle_points()">Points</button>
+        <button class='toggles_top25' id="plusMinus" onclick="toggle_plusMinus()">+/-</button>
+        <button class='toggles_top25' id="faceoff" onclick="toggle_faceoff()">Faceoff</button>
+        <button class='toggles_top25' id="PPG" onclick="toggle_PPG()">PPG <span class='extra-info1'>PowerPlay Goals</span></button>
+        <button class='toggles_top25' id="SHG" onclick="toggle_SHG()">SHG<span class='extra-info2'>ShortHanded Goals</span></button>
+        <img id="star-player" src="nhl-images/NHL-Logo.png">
+        <img id="star-player2" src="nhl-images/_nhl_all-star_game_logo_primary_2022_sportslogosnet-3232.png">
+    </main>
+</body>

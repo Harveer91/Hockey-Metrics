@@ -192,3 +192,118 @@ teamLinks.forEach(link => {
     dropdown.classList.remove('show');
   });
 });
+
+function getTopStatLeaders(category) {
+  return fetch(`http://127.0.0.1:8000/stats-leaders?category=${category}&limit=25`)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data); 
+      return data[category] || []; 
+    });
+}
+
+
+function toggle_goal() {
+    console.log("Goals button clicked");
+    getTopStatLeaders("goals")
+        .then(data => {
+            display_stat_leaders(data);
+        })
+        .catch(err => console.error(err));
+}
+
+
+function toggle_assist(){
+    getTopStatLeaders("assists")
+    .then(data => {
+        display_stat_leaders(data);
+    })
+        .catch(err => console.error(err))
+}
+
+function toggle_points(){
+    getTopStatLeaders('points')
+    .then(data => {
+        display_stat_leaders(data);
+    })
+        .catch(err => console.error(err))
+}
+
+function toggle_plusMinus(){
+    getTopStatLeaders('plusMinus')
+    .then(data => {
+        display_stat_leaders(data);
+    })
+        .catch(err => console.error(err))
+}
+
+function toggle_faceoff(){
+    getTopStatLeaders('faceoffLeaders')
+    .then(data => {
+        display_stat_leaders(data);
+    })
+        .catch(err => console.error(err))
+}
+
+function toggle_PPG(){
+    getTopStatLeaders('goalsPp')
+    .then(data => {
+        display_stat_leaders(data);
+    })
+        .catch(err => console.error(err))
+}
+
+function toggle_SHG(){
+    getTopStatLeaders('goalsSh')
+    .then(data => {
+        display_stat_leaders(data);
+    })
+        .catch(err => console.error(err))
+}
+
+
+
+function display_stat_leaders(data) {
+  const containerId = "top_25_data";
+
+  if (!Array.isArray(data) || data.length === 0) {
+    document.getElementById(containerId).innerHTML = '<p>No data available.</p>';
+    return;
+  }
+
+  const columns = [
+    { key: 'firstName', label: 'First Name' },
+    { key: 'lastName', label: 'Last Name' },
+    { key: 'teamAbbrev', label: 'Team' },
+    { key: 'position', label: 'Position' },
+    { key: 'value', label: 'Stat Value' },
+  ];
+
+  let html = '<table border="1" cellspacing="0" cellpadding="5"><thead><tr>';
+
+  columns.forEach(col => {
+    html += `<th>${col.label}</th>`;
+  });
+
+  html += '</tr></thead><tbody>';
+
+  data.forEach(player => {
+    html += '<tr>';
+
+    columns.forEach(col => {
+      let val = player[col.key];
+
+      if ((col.key === 'firstName' || col.key === 'lastName') && typeof val === 'object' && val !== null) {
+        val = val.default || '';
+      }
+
+      html += `<td>${val !== undefined ? val : ''}</td>`;
+    });
+
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+
+  document.getElementById(containerId).innerHTML = html;
+}

@@ -59,7 +59,17 @@ def get_goalie_stats_one_team(TEAM_ABBR: str):
     else:
         return("Error: Failed to goaltender data")
 
-
+def stat_leaders(category: str, limit: int = 25):
+    url = "https://api-web.nhle.com/v1/skater-stats-leaders/20242025/2"
+    params = {
+        "categories": category,
+        "limit": limit
+    }
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return f"Error: Failed to get stat leaders (Status code: {response.status_code})"
 
 
 

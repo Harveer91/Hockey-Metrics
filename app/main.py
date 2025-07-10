@@ -5,6 +5,7 @@ from app.data_collector import get_team_roster
 from app.data_collector import get_team_stats
 from app.data_collector import get_skater_stats_for_single_team
 from app.data_collector import get_goalie_stats_one_team
+from app.data_collector import stat_leaders
                                 
 app = FastAPI()
 
@@ -44,4 +45,7 @@ def team_goalies(team_abbr: str):
 def player_stats(player_id: int):
     return get_player_stats(player_id)
 
-
+@app.get("/stats-leaders")
+def get_stat_leaders(category: str, limit: int = 25):
+    result = stat_leaders(category, limit)  
+    return result
