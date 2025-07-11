@@ -122,6 +122,7 @@ body {
     margin-right: 50px;
     margin-left: 55px;
     transition: box-shadow 0.2s ease-in-out,width 0.2s ease-in-out, height 0.2s ease-in-out;
+    color:white;
 }
 
 .box:visited{
