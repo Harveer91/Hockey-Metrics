@@ -1,3 +1,4 @@
+import requests
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.data_collector import get_player_stats
@@ -49,3 +50,11 @@ def player_stats(player_id: int):
 def get_stat_leaders(category: str, limit: int = 25):
     result = stat_leaders(category, limit)  
     return result
+
+@app.get("/v1/draft/rankings/{season}/{prospect_category}")
+def rookie_rankings(season: int, prospect_category: int):
+    response = requests.get(f"https://api-web.nhle.com/v1/draft/rankings/{season}/{prospect_category}")
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return {"error": f"Failed to get rookie rankings. Status code: {response.status_code}"}

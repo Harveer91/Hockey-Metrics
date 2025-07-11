@@ -310,15 +310,101 @@ function display_stat_leaders(data) {
 
 //code for rookie stats app
 
-function get_rookie_rankings(season=2024, prospect_category=1){
-    return fetch(`http://127.0.0.1:8000/v1/draft/rankings/${season}/${prospect_category}`)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data); 
-            return data; 
-        })
-        .catch(error => {
-            console.error('Fetch error:', error)
-            return [];
-        });
+function getRookieRankings(season = 2025, prospect_category = 1) {
+  return fetch(`http://127.0.0.1:8000/v1/draft/rankings/${season}/${prospect_category}`)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    });
 }
+
+const toggleLocationDropdown = () => {
+  document.querySelector('.location-options').classList.toggle('show');
+};
+
+const toggleDraftClassDropdown = () => {
+  document.querySelector('.draft-class').classList.toggle('show');
+};
+
+function handleRookieClick(event, season, prospect_category) {
+  event.preventDefault();
+
+  if (season === undefined) season = 2025;
+  if (prospect_category === undefined) prospect_category = 1;
+
+  document.querySelector('.location-options').classList.remove('show');
+  document.querySelector('.draft-class').classList.remove('show');
+
+  getRookieRankings(season, prospect_category)
+    .then(data => {
+      displayRookieRankings(data.rankings, 100);
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById('rookie-results').innerText = 'Error fetching rookie rankings.';
+    });
+}
+
+function getRookieRankings(season = 2025, prospect_category = 1) {
+  return fetch(`http://127.0.0.1:8000/v1/draft/rankings/${season}/${prospect_category}`)
+    .then(response => {
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return response.json();
+    });
+}
+
+function displayRookieRankings(data, limit = 100) {
+  const container = document.getElementById('rookie-results');
+  if (!Array.isArray(data) || data.length === 0) {
+    container.innerHTML = '<p>No rookie rankings data available.</p>';
+    return;
+  }
+
+  const columns = [
+    { key: 'playerName', label: 'Player Name' },
+    { key: 'positionCode', label: 'Position' },
+    { key: 'shootsCatches', label: 'Shoots/Catches' },
+    { key: 'heightInInches', label: 'Height (in)' },
+    { key: 'weightInPounds', label: 'Weight (lbs)' },
+    { key: 'lastAmateurClub', label: 'Amateur Club' },
+    { key: 'lastAmateurLeague', label: 'Amateur League' },
+    { key: 'birthDate', label: 'Birth Date' },
+    { key: 'birthCity', label: 'Birth City' },
+    { key: 'birthStateProvince', label: 'Birth State/Province' },
+    { key: 'birthCountry', label: 'Birth Country' },
+    { key: 'midtermRank', label: 'Midterm Rank' },
+    { key: 'finalRank', label: 'Final Rank' },
+  ];
+
+  const limitedData = data.slice(0, limit);
+
+  let html = '<table border="1" cellspacing="0" cellpadding="5"><thead><tr>';
+  columns.forEach(col => {
+    html += `<th>${col.label}</th>`;
+  });
+  html += '</tr></thead><tbody>';
+
+  limitedData.forEach(player => {
+    html += '<tr>';
+    columns.forEach(col => {
+      if (col.key === 'playerName') {
+        const fullName = `${player.firstName ?? ''} ${player.lastName ?? ''}`.trim();
+        html += `<td>${fullName}</td>`;
+      } else {
+        html += `<td>${player[col.key] ?? ''}</td>`;
+      }
+    });
+    html += '</tr>';
+  });
+
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+// Close dropdown menus if clicking outside
+window.onclick = (event) => {
+  if (!event.target.classList.contains('rookie-dropdowns')) {
+    document.querySelector('.location-options').classList.remove('show');
+    document.querySelector('.draft-class').classList.remove('show');
+  }
+};

@@ -21,27 +21,32 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="teams.html">Teams</a></li>
             <li><a href="top_25.html">Top 25</a></li>
-            <li><a href="rookie_stats.html">Rookie Statistics</a></li>
+            <li><a href="rookie_stats.html">Rookie Leaderboard</a></li>
 
         </ul>
     </nav>
 
     <main>
         <h2 id="rookie-subtitle">Rookie Rankings</h2>
-        <button class="rookie-dropdowns" id="prospect-location-toggle">Select Location</button>
-        <button class="rookie-dropdowns" id="rookie-class-year">Select Year</button>
-
-        <div class="location-options">
-            <a href="#" onclick="get_rookie_rankings(undefined,1)">NA Skaters</a>
-            <a href="#" onclick="get_rookie_rankings(undefined,2)">International Skaters</a>
-            <a href="#" onclick="get_rookie_rankings(undefined,2)">NA Goalies</a>
-            <a href="#" onclick="get_rookie_rankings(undefined,2)">International Goalies</a>
+        <button class="rookie-dropdowns" id="prospect-location-toggle" onclick="toggleLocationDropdown()">Select Location</button>
+        <div class="dropdown-location">
+            <div class="location-options">
+                <a href="#" onclick="handleRookieClick(event, undefined, 1)">NA Skaters</a>
+                <a href="#" onclick="handleRookieClick(event, undefined, 2)">International Skaters</a>
+                <a href="#" onclick="handleRookieClick(event, undefined, 3)">NA Goalies</a>
+                <a href="#" onclick="handleRookieClick(event, undefined, 4)">International Goalies</a>
+            </div>
         </div>
 
-        <div class="draft-class">
-            <a href="#" onclick="get_rookie_rankings(2024,undefined)"></a>
-            <a href="#" onclick="get_rookie_rankings(2023,undefined)"></a>
-            <a href="#" onclick="get_rookie_rankings(2022,undefined)"></a>
-            <a href="#" onclick="get_rookie_rankings(2021,undefined)"></a>
+        <button class="rookie-dropdowns" id="rookie-class-year" onclick="toggleDraftClassDropdown()">Select Year</button>
+        <div class="dropdown-rookie">
+            <div class="draft-class">
+                <a href="#" onclick="handleRookieClick(event, 2025, undefined)">2025</a>
+                <a href="#" onclick="handleRookieClick(event, 2024, undefined)">2024</a>
+                <a href="#" onclick="handleRookieClick(event, 2023, undefined)">2023</a>
+                <a href="#" onclick="handleRookieClick(event, 2022, undefined)">2022</a>
+                <a href="#" onclick="handleRookieClick(event, 2021, undefined)">2021</a>
+            </div>
         </div>
+        <div id="rookie-results"></div>
     </main>

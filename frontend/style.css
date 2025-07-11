@@ -647,14 +647,15 @@ body {
     display: inline-block;
     text-shadow: 0 0 5px  hsl(0, 39%, 50%);
     margin-left: 615px;
+    top:130px;
 }
 
-.rookie-dropdowns{
+.rookie-dropdowns {
     position: absolute;
     width: 200px;
     height: 50px;
     font-size: 18px;
-    z-index: 1;
+    z-index: 2;
     font-family: "Michroma", sans-serif;
     border: 2px solid hsl(0, 59%, 40%);
     border-radius: 8px;
@@ -668,24 +669,87 @@ body {
     background-color: antiquewhite;
 }
 
-#prospect-location-toggle{
+#prospect-location-toggle {
     top: 140px;
-    left:200px;
+    left: 200px;
 }
 
-#rookie-class-year{
-    top:140px;
-    left:1000px;
+#rookie-class-year {
+    top: 140px;
+    left: 1000px;
 }
 
-.location-options{
-    display:none;
+.dropdown-location {
     position: absolute;
+    top: 190px; /* button top + button height */
+    left: 200px;
     width: 200px;
-    height: 50px;
-    font-size: 18px;
-    z-index: 1;
-    font-family: "Michroma", sans-serif;
-    background-color: #ccc;
-
 }
+
+.dropdown-rookie {
+    position: absolute;
+    top: 190px;
+    left: 1000px;
+    width: 200px;
+}
+
+.location-options,
+.draft-class {
+    display: none;
+    background-color: hsl(0, 100%, 100%);
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 0 0 8px 8px;
+    z-index: 1;
+    text-align: center;
+    font-family: "Michroma", sans-serif;
+}
+
+.location-options.show,
+.draft-class.show {
+    display: block;
+}
+
+.location-options a,
+.draft-class a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.location-options a:hover,
+.draft-class a:hover {
+    background-color: antiquewhite;
+    cursor: pointer;
+}
+
+#rookie-results {
+    width: 1000px;
+    margin-top: 100px;
+    margin-left: 150px;
+}
+
+#rookie-results th {
+    background-color: hsl(179, 73%, 38%);
+    border: 2px solid hsl(348, 59%, 49%);
+    color: white;
+    padding: 8px;
+    text-align: left;
+}
+
+#rookie-results tr {
+    background-color: hsl(184, 12%, 24%);
+    border: 2px solid hsl(348, 59%, 49%);
+}
+
+#rookie-results tr:hover {
+    background-color: hsl(182, 13%, 54%);
+}
+
+#rookie-results td {
+    padding: 8px;
+    border: 2px solid hsl(348, 59%, 49%);
+}
+
