@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="logo.js"></script>
+    <script src="index.js" defer></script>
+    <link rel="icon" type=png href="favicon.png">
+</head>
+<body>
+    <h1 class="header-info" id="title-teams"><b>Rookie Statistics</b></h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+
+
+    <img id="logo" src="favicon.png">  
+    <nav class="nav-bar">
+        <button class="dropdown-menu" onclick="toggleMenu()">
+            <img id="menu-icon" src="menu-icon.png">
+        </button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="teams.html">Teams</a></li>
+            <li><a href="top_25.html">Top 25</a></li>
+            <li><a href="rookie_stats.html">Rookie Statistics</a></li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <h2 id="rookie-subtitle">Rookie Rankings</h2>
+        <button class="rookie-dropdowns" id="prospect-location-toggle">Select Location</button>
+        <button class="rookie-dropdowns" id="rookie-class-year">Select Year</button>
+
+        <div class="location-options">
+            <a href="#" onclick="get_rookie_rankings(undefined,1)">NA Skaters</a>
+            <a href="#" onclick="get_rookie_rankings(undefined,2)">International Skaters</a>
+            <a href="#" onclick="get_rookie_rankings(undefined,2)">NA Goalies</a>
+            <a href="#" onclick="get_rookie_rankings(undefined,2)">International Goalies</a>
+        </div>
+
+        <div class="draft-class">
+            <a href="#" onclick="get_rookie_rankings(2024,undefined)"></a>
+            <a href="#" onclick="get_rookie_rankings(2023,undefined)"></a>
+            <a href="#" onclick="get_rookie_rankings(2022,undefined)"></a>
+            <a href="#" onclick="get_rookie_rankings(2021,undefined)"></a>
+        </div>
+    </main>

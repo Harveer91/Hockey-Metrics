@@ -71,7 +71,13 @@ def stat_leaders(category: str, limit: int = 25):
     else:
         return f"Error: Failed to get stat leaders (Status code: {response.status_code})"
 
-
+#function for rookie stats page 
+def rookie_rankings(season: int, prospect_category: int):
+    response = requests.get(f"https://api-web.nhle.com/v1/draft/rankings/{season}/{prospect_category}")
+    if response.status_code == 200:
+        return response.json()
+    else:
+        return f"Error: Failed to get the rookie rankings (Status code: {response.status_code})"
 
 
     

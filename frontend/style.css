@@ -638,6 +638,54 @@ body {
     right:0px;
     top:225px;
     width:200px;
+}
 
+/*code for the rookie stats page*/
+
+#rookie-subtitle{
+    position: absolute;
+    display: inline-block;
+    text-shadow: 0 0 5px  hsl(0, 39%, 50%);
+    margin-left: 615px;
+}
+
+.rookie-dropdowns{
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    z-index: 1;
+    font-family: "Michroma", sans-serif;
+    border: 2px solid hsl(0, 59%, 40%);
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px hsl(0, 1%, 32%);
+    transition: transform 0.3s ease;
+}
+
+.rookie-dropdowns:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: antiquewhite;
+}
+
+#prospect-location-toggle{
+    top: 140px;
+    left:200px;
+}
+
+#rookie-class-year{
+    top:140px;
+    left:1000px;
+}
+
+.location-options{
+    display:none;
+    position: absolute;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+    z-index: 1;
+    font-family: "Michroma", sans-serif;
+    background-color: #ccc;
 
 }

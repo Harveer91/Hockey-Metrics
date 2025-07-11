@@ -307,3 +307,18 @@ function display_stat_leaders(data) {
 
   document.getElementById(containerId).innerHTML = html;
 }
+
+//code for rookie stats app
+
+function get_rookie_rankings(season=2024, prospect_category=1){
+    return fetch(`http://127.0.0.1:8000/v1/draft/rankings/${season}/${prospect_category}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data); 
+            return data; 
+        })
+        .catch(error => {
+            console.error('Fetch error:', error)
+            return [];
+        });
+}
