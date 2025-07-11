@@ -12,7 +12,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://127.0.0.1:5500"],  # your frontend's URL
+    allow_origins=["http://127.0.0.1:5500","https://hockey-metrics.onrender.com"],  # your frontend's URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

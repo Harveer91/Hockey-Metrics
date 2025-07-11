@@ -4,7 +4,7 @@ const toggleMenu = () => {
 }
 
 function getSkaterStatsForSingleTeam(teamAbbr) {
-  fetch(`http://127.0.0.1:8000/team/${teamAbbr}/stats/now`)
+  fetch(`https://hockey-metrics.onrender.com/team/${teamAbbr}/stats/now`)
     .then(response => {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
@@ -194,7 +194,7 @@ teamLinks.forEach(link => {
 });
 
 function getTopStatLeaders(category) {
-  return fetch(`http://127.0.0.1:8000/stats-leaders?category=${category}&limit=25`)
+  return fetch(`https://hockey-metrics.onrender.com/stats-leaders?category=${category}&limit=25`)
     .then(response => response.json())
     .then(data => {
       console.log(data); 
@@ -311,7 +311,7 @@ function display_stat_leaders(data) {
 //code for rookie stats app
 
 function getRookieRankings(season = 2025, prospect_category = 1) {
-  return fetch(`http://127.0.0.1:8000/v1/draft/rankings/${season}/${prospect_category}`)
+  return fetch(`https://hockey-metrics.onrender.com/v1/draft/rankings/${season}/${prospect_category}`)
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
@@ -346,7 +346,7 @@ function handleRookieClick(event, season, prospect_category) {
 }
 
 function getRookieRankings(season = 2025, prospect_category = 1) {
-  return fetch(`http://127.0.0.1:8000/v1/draft/rankings/${season}/${prospect_category}`)
+  return fetch(`https://hockey-metrics.onrender.com/v1/draft/rankings/${season}/${prospect_category}`)
     .then(response => {
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       return response.json();
